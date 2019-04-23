@@ -5,7 +5,7 @@
   "main": "TabNavigator.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/exponentjs/react-native-tab-navigator.git"
+    "url": "git+https://github.com/parkpoom2984/react-native-tab-navigator.git"
   },
   "keywords": [
     "react-native",
