@@ -17,9 +17,9 @@
   "author": "James Ide",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/exponentjs/react-native-tab-navigator/issues"
+    "url": "https://github.com/parkpoom2984/react-native-tab-navigator/issues"
   },
-  "homepage": "https://github.com/exponentjs/react-native-tab-navigator#readme",
+  "homepage": "https://github.com/parkpoom2984/react-native-tab-navigator#readme",
   "dependencies": {
     "immutable": "^3.8.1",
     "prop-types": "^15.5.10"

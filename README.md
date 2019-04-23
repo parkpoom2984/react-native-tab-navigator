@@ -80,13 +80,12 @@ TabNavigator.Item props
 | badgeText | none | string or number | text for Item badge |
 | renderBadge | none | function | returns Item badge |
 | title | none | string | Item title |
-| source | none | string | image icon |
-| styleCenterMenu | none | style | styling for center icon |
 | titleStyle | inherited | style | styling for Item title |
 | selectedTitleStyle | none | style | styling for selected Item title |
 | tabStyle | inherited | style | styling for tab |
 | selected | none | boolean | return whether the item is selected |
 | onPress | none | function | onPress method for Item |
 | allowFontScaling | false | boolean | allow font scaling for title |
-
+| source | none | string | image icon |
+| styleCenterMenu | none | style | styling for center icon |
 
