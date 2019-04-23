@@ -7,11 +7,6 @@ The look and feel is slightly different than the native navigator but it is bett
 
 Note: This is **not** the same `TabNavigation` component that is used in [ExNavigation](https://github.com/exponentjs/ex-navigation), the API and implementations are slightly different -- react-native-tab-navigator stands on its own and does not depend on any other navigation library.
 
-## Demo
-For demo, please check the example folder
-
-<img src="./demo.gif" alt="demo" style="height: 600px;"/>
-
 Install
 -------
 
@@ -85,12 +80,13 @@ TabNavigator.Item props
 | badgeText | none | string or number | text for Item badge |
 | renderBadge | none | function | returns Item badge |
 | title | none | string | Item title |
+| source | none | string | image icon |
+| styleCenterMenu | none | style | styling for center icon |
 | titleStyle | inherited | style | styling for Item title |
 | selectedTitleStyle | none | style | styling for selected Item title |
 | tabStyle | inherited | style | styling for tab |
 | selected | none | boolean | return whether the item is selected |
 | onPress | none | function | onPress method for Item |
 | allowFontScaling | false | boolean | allow font scaling for title |
-| accessible | none | boolean | indicates if this item is an accessibility element |
-| accessibilityLabel | none | string | override text for screen readers |
-| testID | none | string | used to locate this item in end-to-end-tests |
+
+

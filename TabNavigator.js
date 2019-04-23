@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
+  Text,
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
 import Badge from './Badge';
@@ -75,11 +78,13 @@ export default class TabNavigator extends React.Component {
         return;
       }
 
-      let { selected } = item.props;
-      let scene =
-        <SceneContainer key={sceneKey} selected={selected} style={sceneStyle}>
+      let { selected, isCenterMenu } = item.props;
+      let scene
+      if (!isCenterMenu) {
+        scene = <SceneContainer key={sceneKey} selected={selected} style={sceneStyle}>
           {item}
         </SceneContainer>;
+      }
 
       scenes.push(scene);
     });
@@ -88,6 +93,7 @@ export default class TabNavigator extends React.Component {
       <View {...props} style={[styles.container, style]}>
         {scenes}
         <TabBar style={tabBarStyle} shadowStyle={tabBarShadowStyle}>
+          
           {React.Children.map(children, this._renderTab)}
         </TabBar>
       </View>
@@ -118,28 +124,36 @@ export default class TabNavigator extends React.Component {
     } else if (item.props.badgeText) {
       badge = <Badge>{item.props.badgeText}</Badge>;
     }
+    if (item.props.isCenterMenu) {
+      return (
+        <TouchableOpacity style={item.props.styleCenterMenu} onPress={item.props.onPress}>
+          <Image
+								source={item.props.source}
+							/>
+        </TouchableOpacity>
+      );
+    } else {
+      return (
+        <Tab
+          testID={item.props.testID}
+          title={item.props.title}
+          allowFontScaling={item.props.allowFontScaling}
+          titleStyle={[
+            item.props.titleStyle,
+            item.props.selected ? [
+              styles.defaultSelectedTitle,
+              item.props.selectedTitleStyle,
+            ] : null,
+          ]}
+          badge={badge}
+          onPress={item.props.onPress}
+          hidesTabTouch={this.props.hidesTabTouch}
+          style={item.props.tabStyle}>
+          {icon}
+        </Tab>
+      );
+    }
 
-    return (
-      <Tab
-        testID={item.props.testID}
-        accessible={item.props.accessible}
-        accessibilityLabel={item.props.accessibilityLabel}
-        title={item.props.title}
-        allowFontScaling={item.props.allowFontScaling}
-        titleStyle={[
-          item.props.titleStyle,
-          item.props.selected ? [
-            styles.defaultSelectedTitle,
-            item.props.selectedTitleStyle,
-          ] : null,
-        ]}
-        badge={badge}
-        onPress={item.props.onPress}
-        hidesTabTouch={this.props.hidesTabTouch}
-        style={item.props.tabStyle}>
-        {icon}
-      </Tab>
-    );
   }
 }
 

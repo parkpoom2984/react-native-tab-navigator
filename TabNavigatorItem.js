@@ -22,6 +22,8 @@ export default class TabNavigatorItem extends React.Component {
     selected: PropTypes.bool,
     onPress: PropTypes.func,
     allowFontScaling: PropTypes.bool,
+    styleCenterMenu : PropsTypes.style,
+    source: PropsTypes.string,
   };
 
   static defaultProps = {
